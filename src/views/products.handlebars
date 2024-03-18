@@ -1,0 +1,64 @@
+<h1>Bienvenido {{user.name}}!
+    {{#if user.admin}} Eres Admin!
+    {{else}} Eres User
+    {{/if}}
+</h1>
+
+<h2>PRODUCTOS: </h2>
+
+<div>
+<button id="" onclick="viewCart()">Ir Al Carrito</button>
+
+<form action="/api/sessions/logout" method="POST">
+<button type="submit">Logout</button>
+</form>
+
+<button>
+    <a href="/profile">Ver Perfil</a>
+</button>
+
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Código</th>
+        <th>Stock</th>
+        <th>Categoría</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+    
+        {{#each products}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{title}}</td>
+        <td>{{code}}</td>
+        <td>{{stock}}</td>
+        <td>{{category}}</td>
+        <td>{{price}}</td>
+        <td>{{status}}</td>
+        <td>
+            <button onclick="addProductToCart('{{id}}')">Agregar Al Carrito</button>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+{{!-- Flechas de paginacion --}}
+
+<section>
+
+    {{#if hasPrevPage}}
+    <a href={{prevLink}}> << Anterior </a>
+    {{/if}}
+
+    <h3>{{page}} de {{totalPages}}</h3>
+
+    {{#if hasNextPage}}
+    <a href={{nextLink}}> Siguiente >> </a>
+    {{/if}}
+</section> 
+
+<script src="/js/products.js"></script>

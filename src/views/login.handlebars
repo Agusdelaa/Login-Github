@@ -1,0 +1,17 @@
+<form action="/api/sessions/login" id="form-login" method="POST">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" required>
+    <label for="password"></label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit">Iniciar Sesion</button>
+    <button>
+        <a href="/api/sessions/github">Entrar con GitHub</a>
+    </button>
+
+    <div>
+        <h3>Aun no creaste una cuenta? <a href="/register">Regsitrate!</a></h3>
+
+        <h3>Olvidaste tu contraseña? <a href="/restore">Recuperar Contraseña</a></h3>
+    </div>
+
+</form>

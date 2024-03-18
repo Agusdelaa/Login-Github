@@ -1,0 +1,19 @@
+<h1>Restaurar Contraseña</h1>
+<form method="post" action="/api/sessions/restore">
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" name="email" required />
+  </div>
+  <div>
+    <label for="password">New Password: </label>
+    <input type="password" name="password" required />
+  </div>
+  <button type="submit">Restaurar</button>
+
+  <br>
+  <div>
+    <button>
+      <a href="/login">Volver al Login</a>
+    </button>
+  </div>
+</form>
