@@ -26,12 +26,12 @@ const initializePassport = () => {
                     first_name ,
                     last_name ,
                     email ,
-                    age ,
                     password : createHash(password)
                 }
                 const result = await userModel.create(newUser)
                 return done(null, result)
             } catch (error) {
+                console.log(error)
                 return done('error al registrarse', error)
             }
         }
